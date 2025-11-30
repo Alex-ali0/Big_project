@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в PostLime</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <img src="../static/img/logo.png" alt="logo" width="80" height="80">
+        <i class="kolontitul"></i>
+        <a href="/" class="ss"> Главная </a>
+        <a href="/reg" class="ss"> Регистрация </a>
+        <a href="/courses" class="ss"> Курсы </a>
+        <a href="/info" class="ss"> Информация </a>
+        <ul class="main-list">
+
+        </ul>
+                <ul class="main-list">
+    </ul>
+                    <ul class="main-list">
+    </ul>
+      </header>
+      <main class="main-login">
+        {% block content %}
+        <form action="{{ url_for('login') }}" method="POST" class="login">
+            <p class="error">{{error}}</p>
+              <h2 class="main__title">Вход</h2>
+            <label for="email">
+                <input class="form__input" type="email" name="email" id="email" placeholder="Введите e-mail" required>
+            </label>
+
+              <label for="password">
+                  <input class="form__input" type="password" name="password" id="password" placeholder="Введите пароль" required>
+              </label>
+
+                <button class="form__button">Войти</button>
+                <a href="/reg" class="form__button reg__link">Зарегистрироваться</a>
+        </form>
+        {% endblock %}
+      </main>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+  <header class="header">
+    
+        <img src="../static/img/logo.png" alt="logo" width="100" height="100">
+        <i class="kolontitul"></i>
+        <a href="/index" class="ss"> Мои посты </a>
+        <a href="/" class="ss"> Выйти </a>
+        <a href="/courses" class="ss"> Курсы </a>
+        <a href="/info_al" class="ss"> Информация </a>
+<form method="GET" action="/search" class="search-form">
+  <input type="text" name="query" placeholder="Поиск постов...">
+  <button type="submit">Искать</button>
+</form>
+
+
+
+
+
+
+
+
+        
+    </i>
+    <ul class="main-list">
+    </ul>
+            <ul class="main-list">
+    </ul>
+                    <ul class="main-list">
+    </ul>
+  </header>
+  <main>
+    {% block content %}
+
+
+        <h1 class="main_class_title">-- все посты --</h1>
+    <ul class="cards-list">
+      {% for el in cards%}
+      
+      <li class="card">
+        <a class="card__link" href="/card_al/{{el.id}}">
+                  <img class='all_cards_img' src="/{{ el.user_img.replace('\\', '/') }}" alt="Image" width="500">
+          <div class="card__text">
+                  <h2 class="card__title">{{el.title}}</h2>
+                 <p class="card__subtitle">{{el.subtitle}}</p>
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endblock %}
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>

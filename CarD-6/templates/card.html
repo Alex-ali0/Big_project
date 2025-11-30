@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <title>Пост</title>
+</head>
+<body>
+  <header class="header">
+        <img src="../static/img/logo.png" alt="logo" width="100" height="100">
+        <i class="kolontitul"></i>
+        <a href="/log" class="ss"> Войти </a>
+        <a href="/reg" class="ss"> Регистрация </a>
+        <a href="/courses" class="ss"> Курсы </a>
+        <a href="/info" class="ss"> Информация </a>
+    <ul class="main-list">
+        <li class="list__item">
+    </ul>
+            <ul class="main-list">
+    </ul>
+                    <ul class="main-list">
+    </ul>
+  </header>
+  <img class='img_in_card' src="/{{ card.user_img.replace('\\', '/') }}" alt="Image" width="200">
+  <main class="main">
+    {% block content %}
+<h1 class="main_card_title">{{ card.title }}</h1>
+      <div class="main_card_text">
+      {{ card.text }}
+      
+    </div>
+
+  </main>
+    <a class="main_card_link" href="/">Вернуться к постам</a>
+  {% endblock %}
+  <footer>
+
+  </footer>
+</body>
+</html>
